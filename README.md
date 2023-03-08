@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/has-co-de/.github/has-co.de.png" height="128"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/has-co-de/.github/main/has-co.de.png" height="128"></p>
 <h1 align="center">Open Domains</h1>
 
 <p align="center">
