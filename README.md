@@ -1,5 +1,5 @@
-<p align="center"><img src="https://raw.githubusercontent.com/has-co-de/.github/has-co.de.png" height="128"></p>
-<h1 align="center">Open Domains</h1>
+<p align="center"><img src="https://raw.githubusercontent.com/has-co-de/.github/main/has-co.de.png" height="128"></p>
+<h1 align="center">Has Code</h1>
 
 <p align="center">
   <a href="https://github.com/has-co-de/register/tree/main/domains"><img src="https://img.shields.io/github/directory-file-count/has-co-de/register/domains?label=domains&style=for-the-badge&type=file"></a>
