@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to the schema file"
+    },
+    "description": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "has-co.de"
+      ]
+    },
+    "subdomain": {
+      "type": "string",
+      "pattern": "^([a-z0-9_*.-]{1,}|@)$",
+      "not": {
+        "enum": [
+          "ad",
+          "ads",
+          "admin",
+          "admins",
+          "api",
+          "apis",
+          "app",
+          "apps",
+          "cdn",
+          "code",
+          "dns",
+          "doc",
+          "domain",
+          "domains",
+          "donate",
+          "ecma",
+          "editor",
+          "es2015",
+          "example",
+          "faq",
+          "faqs",
+          "ftp",
+          "fund",
+          "funds",
+          "help",
+          "home",
+          "i18n",
+          "imap",
+          "info",
+          "io",
+          "l10n",
+          "legal",
+          "legals",
+          "mx",
+          "my",
+          "ns",
+          "ns1",
+          "ns2",
+          "open",
+          "orig",
+          "origin",
+          "password",
+          "passwords",
+          "pop3",
+          "portal",
+          "portals",
+          "raw",
+          "root",
+          "roots",
+          "rss",
+          "secure",
+          "serv",
+          "server",
+          "servers",
+          "smtp",
+          "socket",
+          "ssh",
+          "store",
+          "stores",
+          "subdomain",
+          "subdomains",
+          "support",
+          "vpn",
+          "vps",
+          "webmail",
+          "webmaster",
+          "ww",
+          "ww1",
+          "ww2",
+          "ww3",
+          "www1",
+          "www2",
+          "www3",
+          "xml"
+        ]
+      }
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repo": {
+          "type": "string",
+          "description": "GitHub repository"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$"
+          }
+        },
+        "AAAA": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]+|::(ffff(:0{1,4})?:)?((25[0-5]|(2[0-4]|1?[0-9])?[0-9])\\.){3}(25[0-5]|(2[0-4]|1?[0-9])?[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1?[0-9])?[0-9])\\.){3}(25[0-5]|(2[0-4]|1?[0-9])?[0-9]))$"
+          }
+        },
+        "CNAME": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z0-9_./-]*$"
+        },
+        "MX": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },  
+        "NS": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9._-]{3,}$"
+          }
+        },
+        "TXT": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "A"
+          ]
+        },
+        {
+          "required": [
+            "AAAA"
+          ]
+        },
+        {
+          "required": [
+            "CNAME"
+          ]
+        },
+        {
+          "required": [
+            "NS"
+          ]
+        },
+        {
+          "required": [
+            "TXT"
+          ]
+        }
+      ]
+    },
+    "proxy": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "$schema",
+    "description",
+    "domain",
+    "subdomain",
+    "record"
+  ]
+}
