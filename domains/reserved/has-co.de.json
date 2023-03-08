@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/domain.schema.json",
+
+  "description": "www",
+
+  "domain": "has-co.de",
+  "subdomain": "@",
+
+  "owner": {
+    "repo": "https://github.com/has-co-de/register",
+    "email": "admin@has-co.de"
+  },
+
+  "record": {
+    "A": ["1.1.1.1", "1.0.0.1"]
+  },
+
+  "proxy": false
+}
