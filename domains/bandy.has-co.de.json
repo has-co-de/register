@@ -1,0 +1,20 @@
+{
+  "$schema": "../schemas/domain.schema.json",
+
+  "description": "Project Description",
+
+  "domain": "has-co.de",
+  "subdomain": "bandy",
+
+  "owner": {
+    "repo": "https://github.com/fordjackie/register",
+    "email": "fordjackie5@outlook.com"
+  },
+
+  "record": {
+    "CNAME": "6159ebed-c81e-4112-85bc-4cc9f1f45963.id.repl.co",
+    "TXT": ["replit-verify=6159ebed-c81e-4112-85bc-4cc9f1f45963"]
+  },
+
+  "proxy": true
+}
